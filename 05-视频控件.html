@@ -99,7 +99,7 @@
 </head>
 
 <body>
-  <video src="./trailer.mp4" muted="muted"></video>
+  <video src="./trailer.mp4" ></video>
   <!-- 多媒体空间 -->
   <div class="media">
     <!-- 播放暂停按钮 -->
@@ -146,6 +146,7 @@
 <script>
   // 多媒体标签
   let media = $('video')[0];
+  let currvolume = 0;
   // $(media).css('width',1970)
 
   // 鼠标移入移除控制 声音空间的显示
@@ -209,6 +210,7 @@
   $(document).mouseup(function () {
     $('.playRange')[0].onmousemove = null;
     $('.volumeRange')[0].onmousemove = null;
+    currvolume = media.volume;
   })
 
   // 点击静音
@@ -218,13 +220,12 @@
       media.muted = true;
       $(this).removeClass('icon-sound-on').addClass('icon-sound-off');
       $('.currentVolume').css('height', 0);
-      $('.volumeBtn').css('bottom', -7);
+      $('.volumeBtn').css('top', 93);
     } else {
       media.muted = false;
       $(this).removeClass('icon-sound-off').addClass('icon-sound-on');
-      $('.currentVolume').css('height', 50);
-      $('.volumeBtn').css('bottom', 43);
-      media.volume = 0.5;
+      $('.currentVolume').css('height', currvolume*$('.volumeRange').height());
+      $('.volumeBtn').css('top', (1-currvolume)*$('.volumeRange').height()-7);
     }
   })
   // 声音控制
@@ -237,6 +238,7 @@
     media.volume = percent;
     // 取消文字选中
     $(document.body)[0].onselectstart = function (e) { e.preventDefault() }
+
     if (percent <= 0) {
       $('.volume i').removeClass('icon-sound-on').addClass('icon-sound-off')
     } else {

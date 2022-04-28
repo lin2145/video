@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1975869",
+      "name": "全屏",
+      "font_class": "fangda",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "14166830",
+      "name": "缩小",
+      "font_class": "suoxiao",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    }
+  ]
+}

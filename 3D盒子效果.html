@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子</title>
+</head>
+<style>
+    body {
+        /* width: 100%;
+            height: 500px;
+            margin: 100px auto; */
+            animation: mymove 10s linear 0.5s infinite alternate-reverse;
+            transform-style: preserve-3d;
+            /* transform: rotate3d(0,1,0,0deg); */
+    }
+
+    @keyframes mymove{
+        0%{
+            transform: rotate3d(0,1,0.5,0deg);
+        }
+
+        50%{
+            transform: rotate3d(0,1,0.5,-180deg);
+        }
+
+        100%{
+            transform: rotate3d(0,1,0.5,-360deg);
+        }
+    }
+    /* section{
+        width: 800px;
+        height: 600px;
+    } */
+    div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 0;
+        left: 500px;
+        text-align: center;
+        line-height: 200px;
+        margin: 400px auto;
+        font-weight: 900;
+        font-size: 30px;
+    }
+
+    div:nth-of-type(1){
+        transform:translateZ(100px);
+    }
+    div:nth-of-type(2){
+        transform: rotateX(90deg) translateZ(100px);
+    }
+    div:nth-of-type(3){
+        transform: rotateY(90deg) translateZ(100px);
+    }
+    div:nth-of-type(4){
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+    div:nth-of-type(5){
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+    div:nth-of-type(6){
+        transform: rotateY(180deg) translateZ(100px);
+    }
+</style>
+
+<body>
+    <section>
+        <div style="opacity: 0.3; background-color: aqua;">壹</div>
+        <div style="opacity: 0.3; background-color: pink;">贰</div>
+        <div style="opacity: 0.3; background-color: orange;">叁</div>
+        <div style="opacity: 0.3; background-color: springgreen;">肆</div>
+        <div style="opacity: 0.3; background-color: tomato;">伍</div>
+        <div style="opacity: 0.3; background-color: indianred;">陆</div> 
+    </section>
+</body>
+
+</html>
